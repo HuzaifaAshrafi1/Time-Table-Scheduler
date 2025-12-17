@@ -1,10 +1,10 @@
-# 🎓 University Timetable Scheduler - Complete Guide
+#  University Timetable Scheduler - Complete Guide
 
 Based on your folder structure, here's the comprehensive README for your project:
 
 ---
 
-# 🎓 University Timetable Scheduler
+#  University Timetable Scheduler
 
 A modern JavaFX-based application for managing university resources, generating timetables, and optimizing room allocations with an intuitive admin dashboard.
 
@@ -13,7 +13,7 @@ A modern JavaFX-based application for managing university resources, generating 
 ![License](https://img.shields.io/badge/License-CC%20BY--NC%204.0-green)
 ![Status](https://img.shields.io/badge/Status-In%20Development-yellow)
 
-## 📁 **Current Project Structure**
+##  **Current Project Structure**
 ```
 TIME-TABLE-SCHEDULER/
 ├── vscode/
@@ -44,9 +44,9 @@ TIME-TABLE-SCHEDULER/
 └── README.md                   # This documentation file
 ```
 
-## ✨ **Features Implemented**
+##  **Features Implemented**
 
-### ✅ **Completed Features**
+###  **Completed Features**
 1. **Secure Login System**
    - Admin authentication (`admin/1234`)
    - Animated particle background
@@ -69,13 +69,13 @@ TIME-TABLE-SCHEDULER/
    - Basic timetable generation
    - Output display in text area
 
-### 🔄 **In Progress**
+###  **In Progress**
 - Database integration
 - Student management module
 - Advanced timetable algorithms
 - Export functionality
 
-## 🚀 **Getting Started**
+##  **Getting Started**
 
 ### **Prerequisites**
 - **Java JDK 17+** ([Download OpenJDK](https://adoptium.net/))
@@ -130,13 +130,13 @@ Update the path to match your installation:
 3. Press `F5` or click "Run and Debug"
 4. Select "Launch Main" configuration
 
-## 🔧 **Default Login Credentials**
+##  **Default Login Credentials**
 ```
 Username: admin
 Password: 1234
 ```
 
-## 🎨 **UI Components**
+##  **UI Components**
 
 ### **Login Page**
 - Location: `UI/login.fxml`
@@ -172,7 +172,7 @@ Password: 1234
   - Generation output area
   - Multiple scheduling strategies
 
-## 📊 **Data Models**
+##  **Data Models**
 
 ### **Admin Model** (`DAO/Model/Admin.java`)
 ```java
@@ -196,7 +196,7 @@ public class RoomLab {
 }
 ```
 
-## 🎯 **Controller Architecture**
+## **Controller Architecture**
 
 ### **LoginController** (`Controller/LoginController.java`)
 - Handles user authentication
@@ -219,7 +219,7 @@ public class RoomLab {
 - Implements algorithm selection
 - Displays generation results
 
-## 📱 **Navigation Flow**
+## **Navigation Flow**
 ```
 Login Page → Dashboard → [Select Module]
     ├── Dashboard Home (Statistics)
@@ -229,7 +229,7 @@ Login Page → Dashboard → [Select Module]
     └── Settings (Future Implementation)
 ```
 
-## 🛠 **Development Guidelines**
+## **Development Guidelines**
 
 ### **Adding New Features**
 1. Create FXML file in `UI/` folder
@@ -261,7 +261,7 @@ public StringProperty nameProperty() {
 }
 ```
 
-## 🔌 **Dependencies**
+## **Dependencies**
 
 ### **Required Libraries**
 1. **JavaFX SDK** - UI framework
@@ -281,7 +281,7 @@ public StringProperty nameProperty() {
 }
 ```
 
-## 🐛 **Troubleshooting**
+## **Troubleshooting**
 
 ### **Common Issues**
 
@@ -308,13 +308,13 @@ stylesheets="@dashboard.css"
 2. Press `F5` to start debugging
 3. Use Debug Console for variable inspection
 
-## 📈 **Future Enhancements**
+## **Future Enhancements**
 
 ### **Phase 1 (Current)**
-- ✅ Login system
-- ✅ Dashboard UI
-- ✅ Rooms management
-- ✅ Basic timetable generation
+-  Login system
+-  Dashboard UI
+-  Rooms management
+-  Basic timetable generation
 
 ### **Phase 2 (Next)**
 - Database integration (MySQL/SQLite)
@@ -328,7 +328,7 @@ stylesheets="@dashboard.css"
 - AI-powered scheduling
 - Cloud deployment
 
-## 🤝 **Contributing**
+## **Contributing**
 
 ### **For Team Members**
 1. Clone the repository
@@ -343,7 +343,7 @@ stylesheets="@dashboard.css"
 - Add comments for complex logic
 - Test features before committing
 
-## 📚 **Learning Resources**
+## **Learning Resources**
 
 ### **JavaFX Documentation**
 - [JavaFX Official Docs](https://openjfx.io/)
@@ -354,7 +354,7 @@ stylesheets="@dashboard.css"
 - [VS Code Java Guide](https://code.visualstudio.com/docs/java/java-tutorial)
 - [JavaFX in VS Code](https://code.visualstudio.com/docs/java/java-javafx)
 
-## 📄 **License**
+## **License**
 
 This project is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License.
 
@@ -369,14 +369,14 @@ Attribution Required: Credit must be given to the authors
 NonCommercial: Commercial use is not permitted
 For complete license terms, see the LICENSE file.
 
-## 👥 **Team Members**
+## **Team Members**
 
 - [Huzaifa Ashrafi] - Project Lead & Developer
 - [Muhammad Affan] - UI/UX Designer
 - [Muhammad Ezaz Azhar] - UI/UX Designer & Backend Developer
 - [Ammar Khan] - Database Administrator
 
-## 📞 **Support**
+## **Support**
 
 For support or questions:
 - Email: Huzaifa123ashrafi@gmail.com
@@ -384,4 +384,4 @@ For support or questions:
 
 ---
 
-**Happy Scheduling!** 🎓📅
+**Happy Scheduling!** 📅
