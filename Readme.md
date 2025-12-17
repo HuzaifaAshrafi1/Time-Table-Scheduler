@@ -10,7 +10,7 @@ A modern JavaFX-based application for managing university resources, generating 
 
 ![Java](https://img.shields.io/badge/Java-17%2B-orange)
 ![JavaFX](https://img.shields.io/badge/JavaFX-21-blue)
-![License](https://img.shields.io/badge/License-MIT-green)
+![License](https://img.shields.io/badge/License-CC%20BY--NC%204.0-green)
 ![Status](https://img.shields.io/badge/Status-In%20Development-yellow)
 
 ## 📁 **Current Project Structure**
