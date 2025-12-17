@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="rootPane"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="Controller.LoginController"
+
+            stylesheets="@login.css">
+
+    <!-- Animated Gradient Background (Auto-Resize) -->
+    <Canvas fx:id="backgroundCanvas"
+            AnchorPane.topAnchor="0"
+            AnchorPane.bottomAnchor="0"
+            AnchorPane.leftAnchor="0"
+            AnchorPane.rightAnchor="0" />
+
+ <!-- Foreground Login Form Inside Card -->
+<VBox alignment="CENTER" spacing="20"
+      AnchorPane.topAnchor="0"
+      AnchorPane.bottomAnchor="0"
+      AnchorPane.leftAnchor="0"
+      AnchorPane.rightAnchor="0"
+      style="-fx-padding: 40;">
+
+    <!-- Card Container -->
+    <VBox alignment="CENTER" spacing="18"
+          style="
+              -fx-padding: 40;
+              -fx-background-color: rgba(255, 255, 255, 0.20);
+              -fx-background-radius: 25;
+              -fx-border-color: rgba(255, 255, 255, 0.35);
+              -fx-border-width: 2;
+              -fx-border-radius: 25;
+              -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 25, 0.3, 0, 0);
+          "
+          maxWidth="550">
+
+        <!-- Glowing University Title -->
+        <Label fx:id="titleLabel" text="Nexor University"
+               style="-fx-font-size: 42px;
+                      -fx-font-weight: bold;
+                      -fx-text-fill: white;" />
+
+        <Label text="Admin Login"
+               style="-fx-font-size: 22px;
+                      -fx-text-fill: white;
+                      -fx-opacity: 0.9;
+                      -fx-font-weight: bold;"/>
+
+        <TextField fx:id="usernameField" promptText="Username"
+                   styleClass="input-field"
+                   prefWidth="400" maxWidth="400"/>
+
+        <PasswordField fx:id="passwordField" promptText="Password"
+                       styleClass="input-field"
+                       prefWidth="400" maxWidth="400"/>
+
+    <Button text="Login" onAction="#handleLogin"
+        styleClass="login-btn" />
+
+
+        <Label fx:id="msgLabel" styleClass="msg-label" />
+
+    </VBox>
+
+</VBox>
+
+
+</AnchorPane>

@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="Controller.RoomsLabsController"
+      alignment="TOP_CENTER"
+      spacing="20"
+      style="-fx-background-color: transparent; -fx-padding: 20 30 30 30;">
+    
+    <!-- Header -->
+    <HBox alignment="CENTER_LEFT" spacing="15">
+        <Button text="← Back" 
+                onAction="#goBack"
+                style="-fx-background-color: rgba(255,255,255,0.1);
+                       -fx-text-fill: white;
+                       -fx-font-weight: bold;
+                       -fx-padding: 8 20;
+                       -fx-background-radius: 15;
+                       -fx-border-color: rgba(0,255,255,0.5);
+                       -fx-border-width: 1;
+                       -fx-border-radius: 15;"
+                onMouseEntered="#handleButtonHover"
+                onMouseExited="#handleButtonExit"/>
+        
+        <Label fx:id="pageTitle"
+               text="ROOMS &amp; LABS MANAGEMENT"
+               style="-fx-text-fill: white;
+                      -fx-font-size: 32px;
+                      -fx-font-weight: bold;
+                      -fx-effect: dropshadow(gaussian, rgba(0,255,255,0.7), 25, 0.6, 0, 0);" />
+    </HBox>
+
+    <!-- Statistics Cards -->
+    <HBox spacing="20" alignment="CENTER">
+        <!-- Total Rooms Card -->
+        <VBox alignment="CENTER" spacing="8"
+              style="-fx-background-color: rgba(30,40,50,0.6);
+                     -fx-background-radius: 15;
+                     -fx-padding: 15 25;
+                     -fx-border-color: rgba(0,200,255,0.4);
+                     -fx-border-width: 1.5;
+                     -fx-border-radius: 15;">
+            <Label text="🏢" style="-fx-font-size: 24px;" />
+            <Label fx:id="totalRoomsLabel" text="0" 
+                   style="-fx-text-fill: #00ffe6; -fx-font-size: 28px; -fx-font-weight: bold;" />
+            <Label text="Total Rooms" style="-fx-text-fill: #cccccc; -fx-font-size: 12px;" />
+        </VBox>
+        
+        <!-- Total Labs Card -->
+        <VBox alignment="CENTER" spacing="8"
+              style="-fx-background-color: rgba(30,40,50,0.6);
+                     -fx-background-radius: 15;
+                     -fx-padding: 15 25;
+                     -fx-border-color: rgba(0,200,255,0.4);
+                     -fx-border-width: 1.5;
+                     -fx-border-radius: 15;">
+            <Label text="🔬" style="-fx-font-size: 24px;" />
+            <Label fx:id="totalLabsLabel" text="0" 
+                   style="-fx-text-fill: #00ffe6; -fx-font-size: 28px; -fx-font-weight: bold;" />
+            <Label text="Total Labs" style="-fx-text-fill: #cccccc; -fx-font-size: 12px;" />
+        </VBox>
+        
+        <!-- Total Capacity Card -->
+        <VBox alignment="CENTER" spacing="8"
+              style="-fx-background-color: rgba(30,40,50,0.6);
+                     -fx-background-radius: 15;
+                     -fx-padding: 15 25;
+                     -fx-border-color: rgba(0,200,255,0.4);
+                     -fx-border-width: 1.5;
+                     -fx-border-radius: 15;">
+            <Label text="👥" style="-fx-font-size: 24px;" />
+            <Label fx:id="totalCapacityLabel" text="0" 
+                   style="-fx-text-fill: #00ffe6; -fx-font-size: 28px; -fx-font-weight: bold;" />
+            <Label text="Total Capacity" style="-fx-text-fill: #cccccc; -fx-font-size: 12px;" />
+        </VBox>
+        
+        <!-- Utilization Card -->
+        <VBox alignment="CENTER" spacing="8"
+              style="-fx-background-color: rgba(30,40,50,0.6);
+                     -fx-background-radius: 15;
+                     -fx-padding: 15 25;
+                     -fx-border-color: rgba(0,200,255,0.4);
+                     -fx-border-width: 1.5;
+                     -fx-border-radius: 15;">
+            <Label text="📊" style="-fx-font-size: 24px;" />
+            <Label fx:id="utilizationLabel" text="85%" 
+                   style="-fx-text-fill: #00ff88; -fx-font-size: 28px; -fx-font-weight: bold;" />
+            <Label text="Utilization" style="-fx-text-fill: #cccccc; -fx-font-size: 12px;" />
+        </VBox>
+    </HBox>
+
+    <!-- Main Content Tabs -->
+    <TabPane tabClosingPolicy="UNAVAILABLE" 
+             style="-fx-background-color: transparent;">
+        
+        <!-- Rooms Tab -->
+        <Tab text="🏢 Rooms Management">
+            <VBox spacing="20" style="-fx-padding: 20;">
+                <!-- Add Room Form -->
+                <VBox spacing="15"
+                      style="-fx-background-color: rgba(20,30,40,0.5);
+                             -fx-background-radius: 15;
+                             -fx-padding: 20;
+                             -fx-border-color: rgba(0,200,255,0.3);
+                             -fx-border-width: 1;
+                             -fx-border-radius: 15;">
+                    <Label text="➕ Add New Room" 
+                           style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;" />
+                    
+                    <GridPane hgap="15" vgap="10">
+                        <columnConstraints>
+                            <ColumnConstraints prefWidth="150" />
+                            <ColumnConstraints prefWidth="250" />
+                        </columnConstraints>
+                        
+                        <!-- Room Name -->
+                        <Label text="Room Name:" style="-fx-text-fill: #cccccc;" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                        <TextField fx:id="roomNameField" promptText="e.g., Room 101" 
+                                   GridPane.rowIndex="0" GridPane.columnIndex="1" />
+                        
+                        <!-- Capacity -->
+                        <Label text="Capacity:" style="-fx-text-fill: #cccccc;" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                        <TextField fx:id="roomCapacityField" promptText="e.g., 50" 
+                                   GridPane.rowIndex="1" GridPane.columnIndex="1" />
+                        
+                        <!-- Department -->
+                        <Label text="Department:" style="-fx-text-fill: #cccccc;" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+                        <ComboBox fx:id="roomDepartmentCombo" promptText="Select Department" 
+                                  GridPane.rowIndex="2" GridPane.columnIndex="1" />
+                        
+                        <!-- Description -->
+                        <Label text="Description:" style="-fx-text-fill: #cccccc;" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+                        <TextArea fx:id="roomDescriptionField" promptText="Optional description" 
+                                  wrapText="true" prefRowCount="3"
+                                  GridPane.rowIndex="3" GridPane.columnIndex="1" />
+                    </GridPane>
+                    
+                    <!-- Action Buttons -->
+                    <HBox spacing="15" alignment="CENTER">
+                        <Button text="➕ Add Room" onAction="#addRoom"
+                                style="-fx-background-color: rgba(0,180,255,0.7);
+                                       -fx-text-fill: white;
+                                       -fx-font-weight: bold;
+                                       -fx-padding: 10 25;
+                                       -fx-background-radius: 10;"
+                                onMouseEntered="#handleButtonHover"
+                                onMouseExited="#handleButtonExit" />
+                        
+                        <Button text="Clear" onAction="#clearRoomForm"
+                                style="-fx-background-color: rgba(255,255,255,0.1);
+                                       -fx-text-fill: white;
+                                       -fx-padding: 10 25;
+                                       -fx-background-radius: 10;"
+                                onMouseEntered="#handleButtonHover"
+                                onMouseExited="#handleButtonExit" />
+                    </HBox>
+                </VBox>
+                
+                <!-- Rooms List -->
+                <VBox spacing="10">
+                    <Label text="📋 Existing Rooms" 
+                           style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;" />
+                    
+                    <TableView fx:id="roomsTable" prefHeight="200"
+                               style="-fx-background-color: rgba(20,30,40,0.5);">
+                        <columns>
+                            <TableColumn text="ID" prefWidth="80" />
+                            <TableColumn text="Name" prefWidth="150" />
+                            <TableColumn text="Capacity" prefWidth="80" />
+                            <TableColumn text="Department" prefWidth="150" />
+                            <TableColumn text="Status" prefWidth="100" />
+                        </columns>
+                    </TableView>
+                    
+                    <HBox spacing="10">
+                        <Button text="✏️ Edit Selected" onAction="#editRoom"
+                                style="-fx-background-color: rgba(255,193,7,0.7);
+                                       -fx-text-fill: white;
+                                       -fx-padding: 8 20;
+                                       -fx-background-radius: 8;"
+                                onMouseEntered="#handleButtonHover"
+                                onMouseExited="#handleButtonExit" />
+                        
+                        <Button text="🗑️ Delete Selected" onAction="#deleteRoom"
+                                style="-fx-background-color: rgba(220,53,69,0.7);
+                                       -fx-text-fill: white;
+                                       -fx-padding: 8 20;
+                                       -fx-background-radius: 8;"
+                                onMouseEntered="#handleButtonHover"
+                                onMouseExited="#handleButtonExit" />
+                    </HBox>
+                </VBox>
+            </VBox>
+        </Tab>
+        
+        <!-- Labs Tab -->
+        <Tab text="🔬 Labs Management">
+            <VBox spacing="20" style="-fx-padding: 20;">
+                <!-- Add Lab Form -->
+                <VBox spacing="15"
+                      style="-fx-background-color: rgba(20,30,40,0.5);
+                             -fx-background-radius: 15;
+                             -fx-padding: 20;
+                             -fx-border-color: rgba(0,200,255,0.3);
+                             -fx-border-width: 1;
+                             -fx-border-radius: 15;">
+                    <Label text="➕ Add New Lab" 
+                           style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;" />
+                    
+                    <GridPane hgap="15" vgap="10">
+                        <columnConstraints>
+                            <ColumnConstraints prefWidth="150" />
+                            <ColumnConstraints prefWidth="250" />
+                        </columnConstraints>
+                        
+                        <!-- Lab Name -->
+                        <Label text="Lab Name:" style="-fx-text-fill: #cccccc;" GridPane.rowIndex="0" GridPane.columnIndex="0" />
+                        <TextField fx:id="labNameField" promptText="e.g., Computer Lab A" 
+                                   GridPane.rowIndex="0" GridPane.columnIndex="1" />
+                        
+                        <!-- Lab Type -->
+                        <Label text="Lab Type:" style="-fx-text-fill: #cccccc;" GridPane.rowIndex="1" GridPane.columnIndex="0" />
+                        <ComboBox fx:id="labTypeCombo" promptText="Select Lab Type" 
+                                  GridPane.rowIndex="1" GridPane.columnIndex="1" />
+                        
+                        <!-- Capacity -->
+                        <Label text="Capacity:" style="-fx-text-fill: #cccccc;" GridPane.rowIndex="2" GridPane.columnIndex="0" />
+                        <TextField fx:id="labCapacityField" promptText="e.g., 30" 
+                                   GridPane.rowIndex="2" GridPane.columnIndex="1" />
+                        
+                        <!-- Department -->
+                        <Label text="Department:" style="-fx-text-fill: #cccccc;" GridPane.rowIndex="3" GridPane.columnIndex="0" />
+                        <ComboBox fx:id="labDepartmentCombo" promptText="Select Department" 
+                                  GridPane.rowIndex="3" GridPane.columnIndex="1" />
+                        
+                        <!-- Description -->
+                        <Label text="Description:" style="-fx-text-fill: #cccccc;" GridPane.rowIndex="4" GridPane.columnIndex="0" />
+                        <TextArea fx:id="labDescriptionField" promptText="Equipment and features" 
+                                  wrapText="true" prefRowCount="3"
+                                  GridPane.rowIndex="4" GridPane.columnIndex="1" />
+                    </GridPane>
+                    
+                    <!-- Action Buttons -->
+                    <HBox spacing="15" alignment="CENTER">
+                        <Button text="➕ Add Lab" onAction="#addLab"
+                                style="-fx-background-color: rgba(220,53,69,0.7);
+                                       -fx-text-fill: white;
+                                       -fx-font-weight: bold;
+                                       -fx-padding: 10 25;
+                                       -fx-background-radius: 10;"
+                                onMouseEntered="#handleButtonHover"
+                                onMouseExited="#handleButtonExit" />
+                        
+                        <Button text="Clear" onAction="#clearLabForm"
+                                style="-fx-background-color: rgba(255,255,255,0.1);
+                                       -fx-text-fill: white;
+                                       -fx-padding: 10 25;
+                                       -fx-background-radius: 10;"
+                                onMouseEntered="#handleButtonHover"
+                                onMouseExited="#handleButtonExit" />
+                    </HBox>
+                </VBox>
+                
+                <!-- Labs List -->
+                <VBox spacing="10">
+                    <Label text="📋 Existing Labs" 
+                           style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;" />
+                    
+                    <TableView fx:id="labsTable" prefHeight="200"
+                               style="-fx-background-color: rgba(20,30,40,0.5);">
+                        <columns>
+                            <TableColumn text="ID" prefWidth="80" />
+                            <TableColumn text="Name" prefWidth="150" />
+                            <TableColumn text="Type" prefWidth="120" />
+                            <TableColumn text="Capacity" prefWidth="80" />
+                            <TableColumn text="Department" prefWidth="150" />
+                            <TableColumn text="Status" prefWidth="100" />
+                        </columns>
+                    </TableView>
+                    
+                    <HBox spacing="10">
+                        <Button text="✏️ Edit Selected" onAction="#editLab"
+                                style="-fx-background-color: rgba(255,193,7,0.7);
+                                       -fx-text-fill: white;
+                                       -fx-padding: 8 20;
+                                       -fx-background-radius: 8;"
+                                onMouseEntered="#handleButtonHover"
+                                onMouseExited="#handleButtonExit" />
+                        
+                        <Button text="🗑️ Delete Selected" onAction="#deleteLab"
+                                style="-fx-background-color: rgba(220,53,69,0.7);
+                                       -fx-text-fill: white;
+                                       -fx-padding: 8 20;
+                                       -fx-background-radius: 8;"
+                                onMouseEntered="#handleButtonHover"
+                                onMouseExited="#handleButtonExit" />
+                    </HBox>
+                </VBox>
+            </VBox>
+        </Tab>
+        
+        <!-- Actions Tab -->
+        <Tab text="⚡ Quick Actions">
+            <VBox spacing="20" alignment="CENTER" style="-fx-padding: 40;">
+                <VBox spacing="25" alignment="CENTER"
+                      style="-fx-background-color: rgba(20,30,40,0.5);
+                             -fx-background-radius: 20;
+                             -fx-padding: 40;
+                             -fx-border-color: rgba(0,200,255,0.3);
+                             -fx-border-width: 1;
+                             -fx-border-radius: 20;">
+                    
+                    <Label text="🚀 Quick Actions" 
+                           style="-fx-text-fill: white; -fx-font-size: 24px; -fx-font-weight: bold;" />
+                    
+                    <VBox spacing="15" alignment="CENTER">
+                        <Button text="📊 Generate Utilization Report" onAction="#generateReport"
+                                style="-fx-background-color: rgba(40,167,69,0.7);
+                                       -fx-text-fill: white;
+                                       -fx-font-size: 16px;
+                                       -fx-font-weight: bold;
+                                       -fx-padding: 15 40;
+                                       -fx-background-radius: 15;"
+                                onMouseEntered="#handleButtonHover"
+                                onMouseExited="#handleButtonExit" />
+                        
+                        <Button text="📥 Export Data to CSV" onAction="#exportData"
+                                style="-fx-background-color: rgba(23,162,184,0.7);
+                                       -fx-text-fill: white;
+                                       -fx-font-size: 16px;
+                                       -fx-font-weight: bold;
+                                       -fx-padding: 15 40;
+                                       -fx-background-radius: 15;"
+                                onMouseEntered="#handleButtonHover"
+                                onMouseExited="#handleButtonExit" />
+                        
+                        <Button text="🔄 Refresh Data"
+                                style="-fx-background-color: rgba(108,117,125,0.7);
+                                       -fx-text-fill: white;
+                                       -fx-font-size: 16px;
+                                       -fx-font-weight: bold;
+                                       -fx-padding: 15 40;
+                                       -fx-background-radius: 15;"
+                                onMouseEntered="#handleButtonHover"
+                                onMouseExited="#handleButtonExit" />
+                    </VBox>
+                    
+                    <Separator style="-fx-padding: 20 0;" />
+                    
+                    <Label text="⚠️ Note: This is a demo version. SQL integration will be added later." 
+                           style="-fx-text-fill: #ff9900; -fx-font-size: 14px; -fx-text-alignment: center;" 
+                           wrapText="true" />
+                </VBox>
+            </VBox>
+        </Tab>
+    </TabPane>
+</VBox>

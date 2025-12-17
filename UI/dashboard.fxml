@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.chart.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="Controller.DashboardController"
+            stylesheets="@dashboard.css">
+
+    <center>
+        <StackPane fx:id="rootStack">
+
+            <!-- BACKGROUND ANIMATION -->
+            <Pane>
+                <Canvas fx:id="backgroundCanvas"/>
+            </Pane>
+
+            <!-- UI -->
+            <BorderPane>
+
+                <!-- SIDEBAR -->
+                <left>
+                    <VBox prefWidth="260"
+                          style="-fx-background-color: rgba(10,10,20,0.55);
+                                 -fx-padding: 25; -fx-spacing: 22;">
+
+                        <Label text="Nexor Admin Panel"
+                               style="-fx-text-fill: white;
+                                      -fx-font-size: 22px;
+                                      -fx-font-weight: bold;"/>
+
+                        <Separator/>
+
+                        <!-- 🔥 ADD DASHBOARD BUTTON -->
+                        <Button text="📊 Dashboard"
+                                styleClass="side-btn"
+                                onAction="#loadDashboardHome"/>
+                        
+                        <Button text="🏫 Rooms &amp; Labs"
+                                styleClass="side-btn"
+                                onAction="#openRoomsLabs"/>
+
+                        <Button text="🧑‍🎓 Students"
+                                styleClass="side-btn"
+                                onAction="#openStudents"/>
+
+                        <Button text="🕒 Generate Timetable"
+                                styleClass="side-btn"
+                                onAction="#openTimetable"/>
+
+                        <Button text="🔧 Settings"
+                                styleClass="side-btn"
+                                onAction="#openSettings"/>
+
+
+                        <Pane VBox.vgrow="ALWAYS"/>
+
+                        <Button text="⏻ Logout"
+                                styleClass="logout-btn"
+                                onAction="#handleLogout"/>
+                    </VBox>
+                </left>
+
+                <!-- 🔥 DYNAMIC CONTENT -->
+                <center>
+                    <StackPane fx:id="contentArea"/>
+                </center>
+
+            </BorderPane>
+        </StackPane>
+    </center>
+</BorderPane>

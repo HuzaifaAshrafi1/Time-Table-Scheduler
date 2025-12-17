@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="Controller.GenerateTimetableController"
+            style="-fx-padding: 25;">
+
+    <VBox spacing="20">
+
+        <Label text="Generate Timetable"
+               style="-fx-font-size: 26px; -fx-text-fill: white; -fx-font-weight: bold;"/>
+
+        <Label text="Select Algorithm:"
+               style="-fx-text-fill: white; -fx-font-size: 16px;"/>
+
+        <ComboBox fx:id="algorithmSelector" prefWidth="300"/>
+
+        <Button text="Generate Now"
+                fx:id="generateBtn"
+                style="-fx-background-color: #00aaff;
+                       -fx-text-fill: white;
+                       -fx-padding: 8px 15px;
+                       -fx-font-size: 16px;
+                       -fx-background-radius: 8;"/>
+
+        <Separator/>
+
+        <TextArea fx:id="outputArea" prefHeight="350"
+                  style="-fx-control-inner-background: rgba(0,0,0,0.3);
+                         -fx-text-fill: white;
+                         -fx-font-size: 14px;"/>
+
+    </VBox>
+
+</AnchorPane>

@@ -1,0 +1,184 @@
+/* =========================================
+   NEXOR NEON THEME — Rooms & Labs Page
+========================================= */
+
+/* Background Canvas */
+#backgroundCanvas {
+    -fx-background-color: linear-gradient(to bottom right, #0f0c29, #302b63, #24243e);
+}
+
+/* Back Button */
+.neon-back-btn {
+    -fx-background-color: rgba(255,255,255,0.15);
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 25;
+    -fx-background-radius: 25;
+    -fx-border-color: rgba(0,255,255,0.6);
+    -fx-border-width: 1.5;
+    -fx-border-radius: 25;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,255,0.5), 20, 0.4, 0, 0);
+    -fx-transition: all 0.3s ease;
+}
+
+.neon-back-btn:hover {
+    -fx-background-color: rgba(0,255,255,0.25);
+    -fx-translate-x: -3px;
+}
+
+/* Title */
+.neon-title {
+    -fx-text-fill: white;
+    -fx-font-size: 42px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,255,0.9), 35, 0.8, 0, 0);
+}
+
+/* Glass Cards */
+.neon-glass-card {
+    -fx-background-color: rgba(30,40,60,0.8);
+    -fx-background-radius: 20;
+    -fx-padding: 25;
+    -fx-border-color: rgba(0,200,255,0.3);
+    -fx-border-width: 1;
+    -fx-border-radius: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,255,0.35), 25, 0.4, 0, 0);
+    -fx-transition: all 0.3s ease;
+}
+
+.neon-glass-card:hover {
+    -fx-background-color: rgba(40,50,70,0.9);
+    -fx-translate-y: -5px;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,255,0.6), 35, 0.5, 0, 0);
+}
+
+/* Icons */
+.neon-icon {
+    -fx-text-fill: #00ffe6;
+    -fx-font-size: 24px;
+}
+
+/* Card Titles */
+.neon-card-title {
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.neon-card-desc {
+    -fx-text-fill: #cccccc;
+    -fx-font-size: 14px;
+}
+
+/* Buttons */
+.neon-btn-cyan {
+    -fx-background-color: linear-gradient(to right, #00b4db, #0083b0);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20;
+    -fx-padding: 10 25;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,180,255,0.6), 20, 0.4, 0, 0);
+    -fx-transition: all 0.3s ease;
+}
+
+.neon-btn-cyan:hover {
+    -fx-background-color: linear-gradient(to right, #00d4ff, #00a3d9);
+    -fx-translate-y: -2px;
+}
+
+.neon-btn-blue {
+    -fx-background-color: linear-gradient(to right, #667eea, #764ba2);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20;
+    -fx-padding: 10 25;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(102,126,234,0.6), 20, 0.4, 0, 0);
+    -fx-transition: all 0.3s ease;
+}
+
+.neon-btn-blue:hover {
+    -fx-background-color: linear-gradient(to right, #8892f1, #8a5bc4);
+    -fx-translate-y: -2px;
+}
+
+.neon-btn-purple {
+    -fx-background-color: linear-gradient(to right, #f093fb, #f5576c);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20;
+    -fx-padding: 10 25;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(240,147,251,0.6), 20, 0.4, 0, 0);
+    -fx-transition: all 0.3s ease;
+}
+
+.neon-btn-purple:hover {
+    -fx-background-color: linear-gradient(to right, #f5b3fd, #f7798c);
+    -fx-translate-y: -2px;
+}
+
+.neon-btn-green {
+    -fx-background-color: linear-gradient(to right, #4facfe, #00f2fe);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20;
+    -fx-padding: 10 25;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(79,172,254,0.6), 20, 0.4, 0, 0);
+    -fx-transition: all 0.3s ease;
+}
+
+.neon-btn-green:hover {
+    -fx-background-color: linear-gradient(to right, #6bbffd, #3dfdff);
+    -fx-translate-y: -2px;
+}
+
+/* Stats Banner */
+.neon-stats-banner {
+    -fx-background-color: rgba(20,30,45,0.9);
+    -fx-background-radius: 20;
+    -fx-padding: 20 40;
+    -fx-border-color: rgba(0,255,255,0.3);
+    -fx-border-width: 1;
+    -fx-border-radius: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,255,0.35), 25, 0.4, 0, 0);
+}
+
+.neon-stat-number {
+    -fx-text-fill: #00ffe6;
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,255,0.8), 20, 0.5, 0, 0);
+}
+
+.neon-stat-label {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-opacity: 0.8;
+}
+
+.neon-separator {
+    -fx-background-color: rgba(255,255,255,0.2);
+}
+
+.neon-coming-soon-banner {
+    -fx-background-color: rgba(255,107,107,0.3);
+    -fx-background-radius: 20;
+    -fx-padding: 15 30;
+    -fx-border-color: rgba(255,152,0,0.5);
+    -fx-border-width: 1;
+    -fx-border-radius: 20;
+    -fx-effect: dropshadow(gaussian, rgba(255,152,0,0.4), 20, 0.4, 0, 0);
+}
+
+.neon-banner-icon {
+    -fx-text-fill: #ff9800;
+    -fx-font-size: 24px;
+}
+
+.neon-banner-text {
+    -fx-text-fill: white;}

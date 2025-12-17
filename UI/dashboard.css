@@ -1,0 +1,297 @@
+/* ============================================================
+   NEXOR ADMIN PANEL — NEON CYBER THEME (FINAL OPTIMIZED)
+   ============================================================ */
+
+/* ------------------------------------------
+   SIDEBAR BUTTONS
+------------------------------------------- */
+.side-btn {
+    -fx-background-color: rgba(255,255,255,0.08);
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-padding: 10 18;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-alignment: CENTER_LEFT;
+    -fx-cursor: hand;
+    -fx-transition: all 0.3s ease;
+}
+
+.side-btn:hover {
+    -fx-background-color: rgba(0,255,255,0.28);
+    -fx-effect: dropshadow(gaussian, rgba(0,255,255,0.6), 20, 0.4, 0, 0);
+    -fx-translate-x: 5px;
+}
+
+.side-btn:pressed {
+    -fx-background-color: rgba(0,255,255,0.45);
+}
+
+
+/* ------------------------------------------
+   LOGOUT BUTTON
+------------------------------------------- */
+.logout-btn {
+    -fx-background-color: linear-gradient(to right, #ff4e4e, #ff1e1e);
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-padding: 10px 25px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(255,50,50,0.55), 18, 0.4, 0, 0);
+}
+
+.logout-btn:hover {
+    -fx-background-color: linear-gradient(to right, #ff6e6e, #ff3333);
+    -fx-translate-y: -2px;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-effect: dropshadow(gaussian, rgba(255,80,80,0.9), 25, 0.4, 0, 0);
+}
+
+.logout-btn:pressed {
+    -fx-background-color: linear-gradient(to right, #ff0000, #cc0000);
+    -fx-scale-x: 0.97;
+    -fx-scale-y: 0.97;
+    -fx-effect: dropshadow(gaussian, rgba(255,0,0,0.8), 20, 0.35, 0, 0);
+}
+
+
+/* ============================================================
+   🔥 CHART PANELS — HIGH VISIBILITY NEON GLASS EFFECT
+   ============================================================ */
+
+.chart {
+    -fx-background-color: transparent;
+    -fx-padding: 20;
+}
+
+.chart-plot-background {
+    -fx-background-color: rgba(10, 20, 25, 0.45);  /* darker glass for visibility */
+    -fx-background-radius: 22;
+    -fx-border-color: rgba(0,255,255,0.45);
+    -fx-border-width: 2;
+    -fx-border-radius: 22;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,255,0.35), 25, 0.45, 0, 0);
+}
+
+/* GRID LINES */
+.chart-horizontal-grid-lines,
+.chart-vertical-grid-lines {
+    -fx-stroke: rgba(255,255,255,0.22);
+    -fx-stroke-dash-array: 5 10;
+}
+
+/* ZERO AXIS LINE (strong highlight) */
+.chart-horizontal-zero-line,
+.chart-vertical-zero-line {
+    -fx-stroke: rgba(0,255,255,0.8);
+    -fx-stroke-width: 2;
+}
+
+/* ============================================================
+   🔥 TITLES, AXIS LABELS, TICKS — HIGH GLOW VISIBILITY
+   ============================================================ */
+
+.chart-title {
+    -fx-text-fill: #eaffff;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,200,1), 35, 0.8, 0, 0);
+}
+
+.axis-label {
+    -fx-text-fill: #eaffff;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,255,1), 30, 0.7, 0, 0);
+}
+
+.chart-axis .tick-label {
+    -fx-fill: #ffffff;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,255,0.9), 22, 0.5, 0, 0);
+}
+
+/* ============================================================
+   🔥 BAR CHART (SAFE COLORS — NO GRADIENT ERRORS)
+   ============================================================ */
+
+.default-color0.chart-bar { -fx-bar-fill: #00eaff; }
+.default-color1.chart-bar { -fx-bar-fill: #00ffb0; }
+.default-color2.chart-bar { -fx-bar-fill: #ffb84d; }
+.default-color3.chart-bar { -fx-bar-fill: #c68bff; }
+
+.chart-bar {
+    -fx-background-radius: 9;
+}
+
+/* ============================================================
+   🔥 LINE CHART (SAFE — No linear gradients on stroke)
+   ============================================================ */
+
+.default-color0.chart-series-line {
+    -fx-stroke: #00ffc8;
+    -fx-stroke-width: 3px;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,200,1), 20, 0.5, 0, 0);
+}
+
+.default-color0.chart-line-symbol {
+    -fx-background-color: white, #00ffc8;
+    -fx-background-radius: 10;
+    -fx-padding: 6;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,200,1), 18, 0.5, 0, 0);
+}
+
+/* ============================================================
+   🔥 LEGEND
+   ============================================================ */
+
+.chart-legend {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,255,0.8), 20, 0.4, 0, 0);
+}
+
+.chart-legend-item-symbol {
+    -fx-background-color: #00ffc8;
+}
+
+/* ============================================================
+   🔥 TOOLTIP — Neon Glass Popup
+   ============================================================ */
+
+.chart-tooltip {
+    -fx-background-color: rgba(0,18,25,0.95);
+    -fx-text-fill: #00ffe6;
+    -fx-border-color: rgba(0,255,255,0.7);
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 6 10;
+    -fx-font-size: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,255,1), 20, 0.4, 0, 0);
+}
+/* ============================================================
+   🔥 DASHBOARD OVERVIEW TITLE — HIGH VISIBILITY NEON
+   ============================================================ */
+#dashboardTitle {
+    -fx-text-fill: white;
+    -fx-font-size: 40px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,150,1), 45, 0.8, 0, 0);
+}
+
+
+/* ============================================================
+   🔥 TOP STATS CARDS (Total Rooms/Labs/Students/Teachers)
+   ============================================================ */
+
+.stat-card {
+    -fx-background-color: rgba(10, 20, 25, 0.65);  /* darker for visibility */
+    -fx-background-radius: 20;
+    -fx-padding: 18 25;
+    -fx-min-width: 180;
+    -fx-alignment: CENTER;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,255,0.42), 30, 0.5, 0, 0);
+}
+
+.stat-title {
+    -fx-text-fill: #d9ffff;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,255,1), 20, 0.7, 0, 0);
+}
+
+.stat-value {
+    -fx-text-fill: white;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,180,1), 25, 0.8, 0, 0);
+}
+
+.input-field, .combo-box {
+    -fx-background-color: rgba(255,255,255,0.1);
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: rgba(255,255,255,0.6);
+    -fx-background-radius: 10;
+    -fx-border-color: rgba(0,255,255,0.3);
+    -fx-border-radius: 10;
+    -fx-padding: 10;
+    -fx-font-size: 14px;
+}
+/* ============================================================
+   🔥 BACK BUTTON
+============================================================ */
+.back-btn {
+    -fx-background-color: rgba(255,255,255,0.1);
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 8 15;
+    -fx-background-radius: 8;
+    -fx-border-color: rgba(255,255,255,0.3);
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-cursor: hand;
+}
+
+.back-btn:hover {
+    -fx-background-color: rgba(255,255,255,0.2);
+    -fx-border-color: rgba(255,255,255,0.6);
+}
+
+/* ============================================================
+   🔥 TAB BUTTONS
+============================================================ */
+.tab-btn {
+    -fx-background-color: rgba(0,30,40,0.7);
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 12 25;
+    -fx-background-radius: 12;
+    -fx-border-color: rgba(0,255,255,0.4);
+    -fx-border-radius: 12;
+    -fx-border-width: 2;
+    -fx-cursor: hand;
+    -fx-transition: all 0.3s ease;
+}
+
+.tab-btn-active {
+    -fx-background-color: rgba(0,255,255,0.3);
+    -fx-text-fill: #00ffe6;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 12 25;
+    -fx-background-radius: 12;
+    -fx-border-color: #00ffe6;
+    -fx-border-radius: 12;
+    -fx-border-width: 2;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,255,255,0.9), 20, 0.6, 0, 0);
+}
+
+.tab-btn:hover {
+    -fx-background-color: rgba(0,255,255,0.2);
+    -fx-border-color: rgba(0,255,255,0.8);
+    -fx-effect: dropshadow(gaussian, rgba(0,255,255,0.6), 15, 0.5, 0, 0);
+}
+/* Back button style */
+.back-btn {
+    -fx-background-color: rgba(255,255,255,0.1);
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20;
+    -fx-background-radius: 8;
+    -fx-border-color: rgba(255,255,255,0.3);
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+    -fx-cursor: hand;
+}
+
+.back-btn:hover {
+    -fx-background-color: rgba(255,255,255,0.2);
+    -fx-border-color: rgba(255,255,255,0.6);
+}

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.chart.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      alignment="TOP_CENTER"
+      spacing="40"
+      style="-fx-padding: 30 40 40 40;">
+
+    <!-- TITLE -->
+    <Label text="Dashboard Overview"
+           style="-fx-text-fill: white;
+                  -fx-font-size: 36px;
+                  -fx-font-weight: bold;"/>
+
+    <!-- STATS -->
+    <HBox spacing="25" alignment="CENTER">
+
+        <VBox styleClass="stat-card">
+            <Label text="Total Rooms" styleClass="stat-title"/>
+            <Label fx:id="roomsCount" text="12" styleClass="stat-value"/>
+        </VBox>
+
+        <VBox styleClass="stat-card">
+            <Label text="Total Labs" styleClass="stat-title"/>
+            <Label fx:id="labsCount" text="7" styleClass="stat-value"/>
+        </VBox>
+
+        <VBox styleClass="stat-card">
+            <Label text="Total Students" styleClass="stat-title"/>
+            <Label fx:id="studentsCount" text="322" styleClass="stat-value"/>
+        </VBox>
+
+        <VBox styleClass="stat-card">
+            <Label text="Total Teachers" styleClass="stat-title"/>
+            <Label fx:id="teachersCount" text="24" styleClass="stat-value"/>
+        </VBox>
+
+    </HBox>
+
+    <!-- CHARTS -->
+    <HBox spacing="50" alignment="CENTER">
+
+        <!-- BAR CHART -->
+        <VBox>
+            <Label text="Population Overview"
+                   style="-fx-text-fill: white;
+                          -fx-font-size: 20px;
+                          -fx-font-weight: bold;"/>
+
+            <BarChart prefWidth="500" prefHeight="300">
+                <xAxis>
+                    <CategoryAxis label="Category"/>
+                </xAxis>
+                <yAxis>
+                    <NumberAxis label="Count"/>
+                </yAxis>
+            </BarChart>
+        </VBox>
+
+        <!-- LINE CHART -->
+        <VBox>
+            <Label text="Student Growth"
+                   style="-fx-text-fill: white;
+                          -fx-font-size: 20px;
+                          -fx-font-weight: bold;"/>
+
+            <LineChart prefWidth="500" prefHeight="300">
+                <xAxis>
+                    <CategoryAxis label="Month"/>
+                </xAxis>
+                <yAxis>
+                    <NumberAxis label="Students"/>
+                </yAxis>
+            </LineChart>
+        </VBox>
+
+    </HBox>
+
+</VBox>
